@@ -1,10 +1,9 @@
 import json
-import requests
 from typing import Dict
+import requests
 
 
 def get_data() -> Dict:
-    """Fetch random user data from the API."""
     try:
         response = requests.get("https://randomuser.me/api/", timeout=5)
         response.raise_for_status()
@@ -14,7 +13,6 @@ def get_data() -> Dict:
 
 
 def format_data(raw_data: Dict) -> Dict:
-    """Format raw user data into a clean dictionary."""
     location = raw_data["location"]
     formatted = {
         "first_name": raw_data["name"]["first"],
@@ -32,8 +30,7 @@ def format_data(raw_data: Dict) -> Dict:
     return formatted
 
 
-def stream_data() -> None:
-    """Fetch, format, and print user data."""
+def stream_data():
     try:
         raw_data = get_data()
         user_data = format_data(raw_data)
