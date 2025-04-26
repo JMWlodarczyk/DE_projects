@@ -6,8 +6,11 @@ from datetime import datetime, timedelta
 def kafka_streaming():
     import requests
     import json
-    pass
 
+    res = requests.get("https://randomuser.me/api/")
+    res = res.json()
+    res = res["results"][0]
+    return res
 
 default_args={
         'owner': 'airflow',
