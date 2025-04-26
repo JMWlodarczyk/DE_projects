@@ -1,1 +1,1 @@
-Me just tasking different tech, small projects, some coding.
+Me just trying different tech, small projects, some coding.
