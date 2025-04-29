@@ -1,16 +1,8 @@
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime, timedelta
+from scripts.main import get_data, format_data, stream_data
 
-
-def kafka_streaming():
-    import requests
-    import json
-
-    res = requests.get("https://randomuser.me/api/")
-    res = res.json()
-    res = res["results"][0]
-    return res
 
 default_args={
         'owner': 'airflow',
@@ -27,6 +19,8 @@ with DAG(
 
     process_kafka_task = PythonOperator(
         task_id="run_main_py",
-        python_callable=kafka_streaming, 
+        python_callable=stream_data, 
         dag=dag
     )
+
+print("DAG created successfully")
