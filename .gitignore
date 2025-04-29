@@ -1,6 +1,9 @@
 dbt_bigquery/dbtcrash.json
 streaming_from_Kafka_to_Cassandra/Airflow/logs/scheduler/latest
+<<<<<<< HEAD
 target/
 dbt_packages/
 logs/
 dbt_bigquery/dbtcrash.json
+=======
+>>>>>>> ec5fd18 (init)
