@@ -1,0 +1,2 @@
+dbt_bigquery/dbtcrash.json
+streaming_from_Kafka_to_Cassandra/Airflow/logs/scheduler/latest
