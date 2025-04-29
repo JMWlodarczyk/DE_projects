@@ -22,3 +22,5 @@ with DAG(
         python_callable=stream_data, 
         dag=dag
     )
+
+print("DAG created successfully")
